@@ -23,4 +23,5 @@ func init() {
 	if err != nil {
 		log.Fatal(dsn + "database can't connect")
 	}
+	DB.AutoMigrate(&Todo{})
 }
