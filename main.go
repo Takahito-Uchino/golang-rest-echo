@@ -14,5 +14,7 @@ func main() {
 	e.GET("/todos", controller.GetTodos)
 	e.GET("/todos/:id", controller.GetTodo)
 	e.POST("/todos", controller.CreateTodo)
+	e.PUT("/todos/:id", controller.UpdateTodo)
+	e.DELETE("/todos/:id", controller.DeleteTodo)
 	e.Logger.Fatal(e.Start(":8080"))
 }

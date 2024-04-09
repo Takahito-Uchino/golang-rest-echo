@@ -30,3 +30,21 @@ func GetTodo(c echo.Context) error {
 	model.DB.Take(&todo)
 	return c.JSON(http.StatusOK, todo)
 }
+
+func UpdateTodo(c echo.Context) error {
+	todo := model.Todo{}
+	if err := c.Bind(&todo); err != nil {
+		return err
+	}
+	model.DB.Save(&todo)
+	return c.JSON(http.StatusOK, todo)
+}
+
+func DeleteTodo(c echo.Context) error {
+	todo := model.Todo{}
+	if err := c.Bind(&todo); err != nil {
+		return err
+	}
+	model.DB.Save(&todo)
+	return c.JSON(http.StatusOK, todo)
+}
