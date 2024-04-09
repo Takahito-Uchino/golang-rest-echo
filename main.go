@@ -11,6 +11,8 @@ func main() {
 	db, _ := model.DB.DB()
 	defer db.Close()
 
+	e.GET("/todos", controller.GetTodos)
+	e.GET("/todos/:id", controller.GetTodo)
 	e.POST("/todos", controller.CreateTodo)
 	e.Logger.Fatal(e.Start(":8080"))
 }
