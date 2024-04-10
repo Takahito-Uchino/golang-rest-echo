@@ -1,6 +1,13 @@
 version: '3'
 
 services:
+  app:
+    container_name: echo
+    build: .
+    environment:
+      DEV_DB_DNS: ${DEV_DB_DNS}
+    depends_on:
+      - db
   db:
     container_name: postgres-echo
     image: postgres:latest
